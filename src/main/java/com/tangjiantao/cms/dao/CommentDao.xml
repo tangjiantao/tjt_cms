@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tangjiantao.cms.dao.CommentDao">
+
+
+
+	<insert id="addComment">
+	insert into cms_comment set
+	user_id=#{user.id},article_id=#{article.id},content=#{content},created=#{created}
+	</insert>
+	
+	<resultMap type="com.tangjiantao.cms.domain.Comment" id="commentMap">
+		<id property="id" column="id"></id>
+		<result property="content" column="content"/>
+		<result property="created" column="created"/>
+		<association property="user" javaType="com.tangjiantao.cms.domain.User">
+			<id column="id" property="id"/>
+			<result property="nickname" column="nickname"/>
+		</association>
+	</resultMap>
+	
+	
+	<select id="selects" resultMap="commentMap">
+		select * from cms_comment a left join cms_user b on a.user_id=b.id
+		where article_id=#{id}
+		order by a.created desc
+	</select>
+
+
+
+</mapper>

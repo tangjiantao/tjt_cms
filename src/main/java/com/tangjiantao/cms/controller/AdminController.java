@@ -179,4 +179,9 @@ public class AdminController {
 			cju.setMsg("true");
 			return cju;
 		}
+		
+		public static void main(String[] args) {
+			Thread thread = new Thread();
+			thread.start();
+		}
 }

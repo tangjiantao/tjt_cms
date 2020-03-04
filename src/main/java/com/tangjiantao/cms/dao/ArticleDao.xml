@@ -126,4 +126,47 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		
 		</set>
 	</insert>
+	
+	<!-- 发布图片 -->
+	<insert id="addContent">
+		insert into cms_article
+		
+		<set>
+			<if test="title!=null">
+				title=#{title},
+			</if>
+			<if test="content!=null">
+				content=#{content},
+			</if>
+			<if test="picture!=null">
+				picture=#{picture},
+			</if>
+			<if test="hits==null">
+				hits=0,
+			</if>
+			<if test="hot==null">
+				hot=0,
+			</if>
+			<if test="status==null">
+				status=0,
+			</if>
+			
+			<if test="deleted==null">
+				deleted=0,
+			</if>
+			<if test="created==null">
+				created=now(),
+			</if>
+			<if test="channelId!=null">
+				channel_id=#{channelId},
+			</if>
+			<if test="categoryId!=null">
+				category_id=#{categoryId},
+			</if>
+			<if test="userId!=null">
+				user_id=${userId}
+			</if>
+		
+		</set>
+	</insert>
 </mapper>

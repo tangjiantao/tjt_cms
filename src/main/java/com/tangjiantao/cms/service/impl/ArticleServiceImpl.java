@@ -81,6 +81,12 @@ public class ArticleServiceImpl implements ArticleService {
 		return articleDao.getHotList();
 	}
 
+	//发布图片
+	@Override
+	public void addContent(Article article) {
+		articleDao.addContent(article);
+	}
+
 	
 	
 }

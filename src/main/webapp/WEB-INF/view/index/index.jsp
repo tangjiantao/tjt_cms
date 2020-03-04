@@ -211,7 +211,7 @@
 		<div class="row">
 			<div class="col-md-12" style="padding-top: 50px">
 
-				<p class="text-center">唐建涛版权所有</p>
+				<p class="text-center">牛顺乾版权所有</p>
 			</div>
 		</div>
 

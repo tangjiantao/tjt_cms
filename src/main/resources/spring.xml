@@ -54,7 +54,7 @@
 			</aop:config>
 		-->
 		<!-- 配置事务通知 -->
-		<!-- 
+		
 			<tx:advice id="advice" transaction-manager="transactionManager">
 				<tx:attributes>
 					<tx:method name="add*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
@@ -63,9 +63,9 @@
 					<tx:method name="*"    read-only="true"/>
 				</tx:attributes>
 			</tx:advice>
-		 -->
+		
 		
 		<!-- 注解式事务：开启事务注解 -->
-	  <tx:annotation-driven transaction-manager="transactionManager"/>
+	<!--   <tx:annotation-driven transaction-manager="transactionManager"/> -->
 		
 </beans>

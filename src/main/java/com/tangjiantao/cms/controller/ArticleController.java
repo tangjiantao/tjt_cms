@@ -1,6 +1,7 @@
 package com.tangjiantao.cms.controller;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -14,11 +15,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.PageInfo;
 import com.tangjiantao.cms.domain.Article;
 import com.tangjiantao.cms.domain.Category;
 import com.tangjiantao.cms.domain.Channel;
+import com.tangjiantao.cms.domain.Content;
 import com.tangjiantao.cms.domain.User;
+import com.tangjiantao.cms.domain.enums.ContentType;
 import com.tangjiantao.cms.service.ArticleService;
 
 //import com.tangjiantao.cms.utils.PageUtil;
@@ -146,4 +150,7 @@ public class ArticleController {
 		}
 
 	}
+	
+	
+	
 }
